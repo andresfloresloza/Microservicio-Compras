@@ -10,5 +10,6 @@ namespace Domain.Compras.Repositories
 {
     public interface ICompraRepository : IRepository<Compra, Guid>
     {
+        Task UpdateAsync(Compra obj);
     }
 }

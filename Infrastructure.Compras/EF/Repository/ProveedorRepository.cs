@@ -29,6 +29,13 @@ namespace Infrastructure.Compras.EF.Repository
             return await _context.Proveedores.FirstOrDefaultAsync(x => x.Id == id);
         }
 
+        public Task RemoveAsync(Proveedor obj)
+        {
+            _context.Proveedores.Remove(obj); 
+            return Task.CompletedTask;
+
+        }
+
         public Task UpdateAsync(Proveedor obj)
         {
             _context.Proveedores.Update(obj);

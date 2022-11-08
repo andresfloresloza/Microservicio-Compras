@@ -11,5 +11,8 @@ namespace Domain.Compras.Repositories
     public interface IProductoRepository : IRepository<Producto, Guid>
     {
         Task UpdateAsync(Producto obj);
+
+        Task RemoveAsync(Producto obj);
+
     }
 }

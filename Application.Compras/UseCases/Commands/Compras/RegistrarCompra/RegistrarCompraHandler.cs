@@ -27,27 +27,14 @@ namespace Application.Compras.UseCases.Commands.Compras.RegistrarCompra
             CancellationToken cancellationToken)
         {
 
-            var venta = _compraFactory.CrearCompra(request.ProveedorId);
+            var compra = _compraFactory.CrearCompra(request.ProveedorId);
             foreach (var item in request.Detalle)
             {
-                venta.AgregarDetalleCompra(item.ProductoId, item.Cantidad, item.Precio);
+                compra.AgregarDetalleCompra(item.ProductoId, item.Cantidad, item.Precio);
             }
-            
-            await _compraRepository.CreateAsync(venta);
-
+            await _compraRepository.CreateAsync(compra);
             await _unitOfWork.Commit();
-
-
-
-
-
-
-
-
-
-
-
-            return venta.Id;
+            return compra.Id;
 
         }
     }

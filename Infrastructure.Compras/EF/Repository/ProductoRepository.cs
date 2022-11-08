@@ -1,4 +1,5 @@
 ﻿using Domain.Compras.Model.Productos;
+using Domain.Compras.Model.Proveedores;
 using Domain.Compras.Repositories;
 using Infrastructure.Compras.EF.Context;
 using Microsoft.EntityFrameworkCore;
@@ -33,6 +34,13 @@ namespace Infrastructure.Compras.EF.Repository
         {
             _dbContext.Productos.Update(obj);
             return Task.CompletedTask;
+        }
+
+        public Task RemoveAsync(Producto obj)
+        {
+            _dbContext.Productos.Remove(obj);
+            return Task.CompletedTask;
+
         }
     }
 }

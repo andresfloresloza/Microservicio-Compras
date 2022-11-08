@@ -1,4 +1,5 @@
 ﻿using Domain.Compras.Model.Compras;
+using Domain.Compras.Model.Productos;
 using Domain.Compras.Repositories;
 using Infrastructure.Compras.EF.Context;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +23,11 @@ namespace Infrastructure.Compras.EF.Repository
         public async Task CreateAsync(Compra obj)
         {
             await _context.Compras.AddAsync(obj);
+        }
+        public Task UpdateAsync(Compra obj)
+        {
+            _context.Compras.Update(obj);
+            return Task.CompletedTask;
         }
 
         public async Task<Compra?> FindByIdAsync(Guid id)
