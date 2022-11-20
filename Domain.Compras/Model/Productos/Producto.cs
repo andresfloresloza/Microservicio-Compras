@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MediatR;
 
 namespace Domain.Compras.Model.Productos
 {
@@ -30,6 +31,14 @@ namespace Domain.Compras.Model.Productos
             }
             Stock -= cantidad;
         }
+
+        public void EditProducto(string nombreProducto, decimal precio, int stock)
+        {
+            NombreProducto = nombreProducto;
+            Precio = precio;
+            Stock = stock;
+        }
+
         private Producto() { }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using Application.Compras.UseCases.Commands.Productos.CreateProducto;
+using Application.Compras.UseCases.Commands.Productos.UpdateProducto;
 using Application.Compras.UseCases.Queries.Producto;
+using Application.UseCases.DeleteProducto;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -35,8 +37,20 @@ namespace WebApp.Compras.Controllers
         {
             var result = await _mediator.Send(command);
             return Ok(result);
+        }
 
+        [HttpPut]
+        public async Task<IActionResult> UpdateProducto([FromBody] UpdateProductoCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
 
+        [HttpDelete]
+        public async Task<ActionResult> EliminarProducto([FromBody] DeleteProductoCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
         }
 
     }
