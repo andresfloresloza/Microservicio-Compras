@@ -11,7 +11,7 @@ namespace Domain.Compras.Model.Productos
 {
     public class Producto : AggregateRoot
     {
-        public PersonNameValue NombreProducto { get; private set; }
+        public ProductNameValue NombreProducto { get; private set; }
         public PrecioValue Precio { get; private set; }
         public CantidadValue Stock { get; private set; }
 

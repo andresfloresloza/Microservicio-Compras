@@ -19,9 +19,9 @@ namespace Infrastructure.Compras.EF.Config.ReadConfig
             builder.ToTable("Producto");
             builder.Property(x => x.Id).HasColumnName("productoId");
 
-            var nombreConverter = new ValueConverter<PersonNameValue, string>(
+            var nombreConverter = new ValueConverter<ProductNameValue, string>(
                 personNameValue => personNameValue.Name,
-                stringValue => new PersonNameValue(stringValue)
+                stringValue => new ProductNameValue(stringValue)
             );
 
             builder.Property(x => x.NombreProducto)

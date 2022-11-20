@@ -12,7 +12,7 @@ namespace Domain.Compras.Model.Proveedores
     public class Proveedor : AggregateRoot
     {
         public PersonNameValue NombreCompleto { get; private set; }
-        public PersonNameValue Ubicacion { get; private set; }
+        public UbicacionValue Ubicacion { get; private set; }
 
         public Proveedor(string nombreCompleto, string ubicacion)
         {
@@ -26,7 +26,6 @@ namespace Domain.Compras.Model.Proveedores
         {
             NombreCompleto = nombreProveedor;
             Ubicacion = ubicacionProveedor;
-
         }
 
         //Only for Entity Framework

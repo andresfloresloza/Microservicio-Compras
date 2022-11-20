@@ -25,9 +25,9 @@ namespace Infrastructure.Compras.EF.Config.WriteConfig
                 personNameValue => personNameValue.Name,
                 stringValue => new PersonNameValue(stringValue)
             ); 
-            var ubicacionConverter = new ValueConverter<PersonNameValue, string>(
+            var ubicacionConverter = new ValueConverter<UbicacionValue, string>(
                 ubicacionValue => ubicacionValue.Name,
-                stringValue => new PersonNameValue(stringValue)
+                stringValue => new UbicacionValue(stringValue)
             );
 
             builder.Property(x => x.NombreCompleto)
