@@ -1,6 +1,9 @@
 ﻿using MediatR;
 using Application.Compras.UseCases.Commands.Compras.RegistrarCompra;
 using Microsoft.AspNetCore.Mvc;
+using Application.Compras.UseCases.Queries.Producto;
+using Domain.Compras.Model.Compras;
+using Application.Compras.Dto;
 
 namespace WebApp.Compras.Controllers
 {
