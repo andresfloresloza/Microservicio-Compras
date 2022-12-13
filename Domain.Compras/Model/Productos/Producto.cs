@@ -25,11 +25,11 @@ namespace Domain.Compras.Model.Productos
 
         public void AumentarStock(int cantidad)
         {
-            if (Stock - cantidad < 0)
+            if (Stock + cantidad < 0)
             {
                 throw new BussinessRuleValidationException("No hay stock suficiente");
             }
-            Stock -= cantidad;
+            Stock += cantidad;
         }
 
         public void EditProducto(string nombreProducto, decimal precio, int stock)
