@@ -1,7 +1,7 @@
 using Application.Compras.Dto;
 using Domain.Compras.Model.Compras;
 
-namespace Test.Compras.Domain
+namespace Test.Compras.Application
 {
     public class TestDetalleCompraDto
     {

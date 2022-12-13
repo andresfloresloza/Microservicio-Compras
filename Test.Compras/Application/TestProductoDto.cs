@@ -1,7 +1,6 @@
 using Application.Compras.Dto;
-using Domain.Compras.Model.Proveedores;
 
-namespace Test.Compras.Domain
+namespace Test.Compras.Application
 {
     public class TestProductoDto
     {
